@@ -11,66 +11,66 @@ import SingleProduct, { loader as singleProductLoader } from "./SingleProduct";
 import Registration, { action as registrationAction } from "./Registration";
 
 const AppRouter = () => {
- // Create a browser router with route configurations
- const router = createBrowserRouter([
-   {
-     // Root layout component that wraps all routes
-     element: <Layout />,
-     // Global error boundary for handling routing errors
-     errorElement: <ErrorPage />,
-     // Child routes that will be rendered inside the Layout component
-     children: [
-       {
-         // Home page route: "/"
-         path: "/",
-         element: <Home />,
-         // Loader function runs before rendering Home component
-         loader: homeLoader,
-       },
-       {
-         // Products list route: "/products"
-         path: "/products",
-         element: <Products />,
-         // Loader to fetch products data
-         loader: productsLoader,
-       },
-       {
-         // Single product details route: "/products/123"
-         path: "/products/:id", // :id is a dynamic parameter
-         element: <SingleProduct />,
-         // Loader to fetch single product data using the id parameter
-         loader: singleProductLoader,
-       },
-       {
-         // Categories route: "/categories"
-         path: "/categories",
-         element: <Categories />,
-         // Loader to fetch categories data
-         loader: categoriesLoader,
-         // Nested routes within categories
-         children: [
-           {
-             // Category-specific products route: "/categories/electronics"
-             path: ":category", // :category is a dynamic parameter
-             element: <Products />,
-             // Loader to fetch products filtered by category
-             loader: productsLoader,
-           }
-         ]
-       },
-       {
-         // Registration route: "/register"
-         path: "/register",
-         element: <Registration />,
-         // Action to handle form submission in Registration component
-         action: registrationAction,
-       }
-     ]
-   }
- ]);
+  // Create a browser router with route configurations
+  const router = createBrowserRouter([
+    {
+      // Root layout component that wraps all routes
+      element: <Layout />,
+      // Global error boundary for handling routing errors
+      errorElement: <ErrorPage />,
+      // Child routes that will be rendered inside the Layout component
+      children: [
+        {
+          // Home page route: "/"
+          path: "/",
+          element: <Home />,
+          // Loader function runs before rendering Home component
+          loader: homeLoader,
+        },
+        {
+          // Products list route: "/products"
+          path: "/products",
+          element: <Products />,
+          // Loader to fetch products data
+          loader: productsLoader,
+        },
+        {
+          // Single product details route: "/products/123"
+          path: "/products/:id", // :id is a dynamic parameter
+          element: <SingleProduct />,
+          // Loader to fetch single product data using the id parameter
+          loader: singleProductLoader,
+        },
+        {
+          // Categories route: "/categories"
+          path: "/categories",
+          element: <Categories />,
+          // Loader to fetch categories data
+          loader: categoriesLoader,
+          // Nested routes within categories
+          children: [
+            {
+              // Category-specific products route: "/categories/electronics"
+              path: ":category", // :category is a dynamic parameter
+              element: <Products />,
+              // Loader to fetch products filtered by category
+              loader: productsLoader,
+            },
+          ],
+        },
+        {
+          // Registration route: "/register"
+          path: "/register",
+          element: <Registration />,
+          // Action to handle form submission in Registration component
+          action: registrationAction,
+        },
+      ],
+    },
+  ]);
 
- // Provide the router configuration to the app
- return <RouterProvider router={router} />;
+  // Provide the router configuration to the app
+  return <RouterProvider router={router} />;
 };
 
 export default AppRouter;

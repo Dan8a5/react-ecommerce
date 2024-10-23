@@ -1,0 +1,131 @@
+/* src/routes/Registration.module.css */
+.container {
+    min-height: calc(100vh - 64px); /* Adjust based on your navbar height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: 563EB;
+  }
+  
+  .formWrapper {
+    width: 100%;
+    max-width: 420px;
+    background: rgb(245, 242, 242);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .title {
+    color: #141515;
+    font-size: 1.875rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    color: #141515;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .label {
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+  
+  .input::placeholder {
+    color: #9CA3AF;
+  }
+  
+  .submitButton {
+    margin-top: 1rem;
+    padding: 0.875rem 1.5rem;
+    background-color: #25eb99;
+    color: #141515;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #1D4ED8;
+    transform: translateY(-1px);
+  }
+  
+  .submitButton:active {
+    transform: translateY(0);
+  }
+  
+  .terms {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #141515;
+  }
+  
+  .link {
+    color: #2563EB;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Add error styles */
+  .error {
+    color: #DC2626;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .container {
+      padding: 1rem;
+    }
+  
+    .formWrapper {
+      padding: 1.5rem;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  }
